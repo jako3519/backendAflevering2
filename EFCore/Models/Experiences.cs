@@ -16,10 +16,12 @@ public class Experience
     //public decimal Price { get; set; }
         public int Price { get; set; }
 
+
+// når der sættes ? så gør det dem nualable, dette er så jeg ikke får problemer med at de er ikke er nul, feks. når jeg skal demonstere post metoden    :)
     public int ProviderID_FK { get; set; }
 
-    public Provider Provider { get; set; }
-    public ICollection<Discount> Discounts { get; set; }
-    public ICollection<SharedExperience> SharedExperiences { get; set; }
-    public ICollection<Reservation> Reservations { get; set; }
+    public Provider? Provider { get; set; }
+    public ICollection<Discount>? Discounts { get; set; }
+    public ICollection<SharedExperience>? SharedExperiences { get; set; }
+    public ICollection<Reservation>? Reservations { get; set; }
 }

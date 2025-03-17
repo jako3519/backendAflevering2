@@ -5168,11 +5168,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jako3\\bad2\\EFCore\\EFCore.csproj",
+      "projectUniqueName": "C:\\Users\\jako3\\OneDrive\\Skrivebord\\GithubOpsætning\\backendAflevering2\\EFCore\\EFCore.csproj",
       "projectName": "EFCore",
-      "projectPath": "C:\\Users\\jako3\\bad2\\EFCore\\EFCore.csproj",
+      "projectPath": "C:\\Users\\jako3\\OneDrive\\Skrivebord\\GithubOpsætning\\backendAflevering2\\EFCore\\EFCore.csproj",
       "packagesPath": "C:\\Users\\jako3\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jako3\\bad2\\EFCore\\obj\\",
+      "outputPath": "C:\\Users\\jako3\\OneDrive\\Skrivebord\\GithubOpsætning\\backendAflevering2\\EFCore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

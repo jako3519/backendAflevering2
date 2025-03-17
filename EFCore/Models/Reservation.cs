@@ -12,6 +12,6 @@ public class Reservation
     public Guest Guest { get; set; }
     public Experience Experience { get; set; }
 
-        public Discount Discount { get; set; } 
+    public Discount Discount { get; set; } 
 
 }
