@@ -1,5 +1,3 @@
-
-
 using Microsoft.EntityFrameworkCore;
 using ExperienceAPI.Models;
 
@@ -45,9 +43,9 @@ namespace ExperienceAPI.Data
                 .HasKey(d => new { d.ExperienceID_FK, d.GroupSize });
             modelBuilder.Entity<Discount>()
                 .HasOne(d => d.Experience)
-                .WithMany()
+                .WithMany(e => e.Discounts)
                 .HasForeignKey(d => d.ExperienceID_FK)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade); // <-- Cascade Delete her
             modelBuilder.Entity<Discount>()
                 .Property(d => d.PriceAfterDiscount).HasColumnType("decimal(18,2)");
             modelBuilder.Entity<Discount>()
@@ -73,9 +71,9 @@ namespace ExperienceAPI.Data
                 .OnDelete(DeleteBehavior.NoAction);
             modelBuilder.Entity<Reservation>()
                 .HasOne(r => r.Experience)
-                .WithMany()
+                .WithMany(e => e.Reservations)
                 .HasForeignKey(r => r.ExperienceID_FK)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade); // <-- Cascade Delete her
             modelBuilder.Entity<Reservation>()
                 .HasOne(r => r.Discount)
                 .WithMany()
@@ -89,9 +87,9 @@ namespace ExperienceAPI.Data
                 .HasKey(se => se.ShareExperienceID);
             modelBuilder.Entity<SharedExperience>()
                 .HasOne(se => se.Experience)
-                .WithMany()
+                .WithMany(e => e.SharedExperiences)
                 .HasForeignKey(se => se.ExperienceID_FK)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade); // <-- Cascade Delete her
 
             // GuestSharedExperience
             modelBuilder.Entity<GuestSharedExperience>()
@@ -103,9 +101,9 @@ namespace ExperienceAPI.Data
                 .OnDelete(DeleteBehavior.NoAction);
             modelBuilder.Entity<GuestSharedExperience>()
                 .HasOne(gse => gse.SharedExperience)
-                .WithMany()
+                .WithMany(se => se.GuestSharedExperiences)
                 .HasForeignKey(gse => gse.ShareExperienceID)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade); // <-- Cascade Delete her
 
             base.OnModelCreating(modelBuilder);
         }

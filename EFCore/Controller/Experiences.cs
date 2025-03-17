@@ -85,34 +85,12 @@ public IActionResult UpdateExperience(int id, [FromBody] ExperienceUpdateDto upd
 [HttpDelete("{id}")]
 public IActionResult DeleteExperience(int id)
 {
-    var experience = _context.Experiences
-        .Include(e => e.Discounts)
-        .Include(e => e.SharedExperiences)
-            .ThenInclude(se => se.GuestSharedExperiences)
-        .Include(e => e.Reservations)
-        .FirstOrDefault(e => e.ExperienceID == id);
+    var experience = _context.Experiences.Find(id);
 
     if (experience == null)
         return NotFound();
 
-    if (experience.Discounts != null && experience.Discounts.Any())
-        _context.Discounts.RemoveRange(experience.Discounts);
-
-    if (experience.SharedExperiences != null)
-    {
-        foreach (var sharedExp in experience.SharedExperiences)
-        {
-            if (sharedExp.GuestSharedExperiences != null && sharedExp.GuestSharedExperiences.Any())
-                _context.GuestSharedExperiences.RemoveRange(sharedExp.GuestSharedExperiences);
-        }
-        _context.SharedExperiences.RemoveRange(experience.SharedExperiences);
-    }
-
-    if (experience.Reservations != null && experience.Reservations.Any())
-        _context.Reservations.RemoveRange(experience.Reservations);
-
     _context.Experiences.Remove(experience);
-
     _context.SaveChanges();
 
     return NoContent();
