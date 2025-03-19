@@ -14,7 +14,7 @@ public class Experience
     [NonNegativePrice] //  her bliver  den "Custom validation attribute" kaldt
                        //  De er defineret under validators
     //public decimal Price { get; set; }
-        public int Price { get; set; }
+    public decimal Price { get; set; }
 
 
 // når der sættes ? så gør det dem nualable, dette er så jeg ikke får problemer med at de er ikke er nul, feks. når jeg skal demonstere post metoden    :)

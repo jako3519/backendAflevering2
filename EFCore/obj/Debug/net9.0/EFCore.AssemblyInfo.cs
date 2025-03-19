@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EFCore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+23f66c7efc616013a4d91d4ec026107f77abef9a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef56742c0f0a46d18d4667d9ce67eb3846e7a799")]
 [assembly: System.Reflection.AssemblyProductAttribute("EFCore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EFCore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
